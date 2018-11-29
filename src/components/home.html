@@ -1,0 +1,123 @@
+﻿<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+    <div class="page-header">
+        <h1 class="text-center docs-logotype">COE Test Automation Sample App</h1>
+    </div>
+    <p>
+        <strong>Based on Vue.js and Bootstrap</strong>
+    </p>
+    <p class="md-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam pellentesque elit eget varius. Pellentesque vestibulum varius rhoncus. Sed vel hendrerit ligula, at iaculis urna. Phasellus massa nisi, commodo ac porttitor nec, bibendum vel lorem. Nunc consectetur massa a diam viverra, in ornare ligula dictum. Aenean libero eros, euismod et orci eget, sodales fermentum mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam molestie feugiat bibendum. Nunc non finibus enim. Donec eget fringilla dolor. <span class="md-ink-ripple">Integer nec hendrerit arcu.</span>
+    </p>
+    <p class="text-center" v-if="!$root.isAuthenticated">
+        <router-link to="/signin" id="sign-in" class="btn btn-lg btn-default">Sign In</router-link>
+        <router-link to="/signup" id="sign-up" class="btn btn-lg btn-default">Sign Up</router-link>
+    </p>
+	<div class="demo_block">
+	  <h3 class="demo_title">Invisible text. Javascript timeout display and hide.</h3>
+	  Not visible text next to it, will be visible in 2 sec and disappear in 4 sec: <span class="waiting">Not ready</span>
+    </div>
+	<div class="demo_block" id="checkboxes">
+	  <h3 class="demo_title">Checkbox:</h3><br>
+	  <input type="checkbox" id="checkboxinput" name="checkboxinput" value="1"> checkbox 1<br>
+	  <input type="checkbox" id="checkboxinput2" name="checkboxinput2" value="2"> checkbox 2
+    </div>
+	<div class="demo_block"  id="radioboxes">
+	  <h3 class="demo_title">Radio:</h3><br>
+	  <input name="_fsradio2" id="radio1" type="radio" value="1"> radio 1<br>
+	  <input name="_fsradio2" id="radio2" type="radio" value="2"> radio 2
+    </div>
+	<div class="demo_block" id="textinputs">
+	  <h3 class="demo_title">Input text:</h3><br>
+	  <input type="text" name="textinput" id="text1" value="">
+    </div>
+	<div class="example demo_block" id="dropdowns">
+	  <h3 class="demo_title">Dropdown List</h3>
+	  <select id="dropdown" name="documentation-version">
+		  <option value="" disabled="disabled" selected="selected">Please select an option</option>
+		  <option value="1">Option 1</option>
+		  <option value="2">Option 2</option>
+	  </select>
+	</div>	
+	<div class="demo_block" id="forms">
+	  <h3 class="demo_title">User profile:</h3><br>
+	  <input type="text" id="firstname" name="userfirstname" ng-model="user.firstName" value=""><br><br>
+	  <input type="text" id="lastname" name="usersecondname" ng-model="user.lastName" value=""><br><br>
+	  <input type="text" id="company" name="company" ng-model="user.company" value=""><br><br>
+	  <input type="button" value="Save">
+    </div>
+	<div class="example demo_block" id="filedownloaders">
+	  <h3 class="demo_title">File Downloader</h3>
+		<a href="download/1.jpg" id="file1">1.jpg</a>
+		<br>
+		<a href="download/some-file.txt" id="file2">some-file.txt</a>
+		<br>	  
+		<a href="download/1.png" id="file3">1.png</a>
+		<br>	  
+		<a href="download/ObjectivityTestAutomationCSHarpFramework.txt" id="file4">ObjectivityTestAutomationCSHarpFramework.txt</a>
+		<br>	  
+		<a href="download/uploadanddownload.txt" id="file5">uploadanddownload.txt</a>
+		<br>
+	  
+	</div>	
+	<div class="example demo_block" id="drugndrops">
+	  <h3 class="demo_title">Drag and Drop</h3>
+	  <div id="columns">
+		<div class="column" id="column-a" draggable="true"><header>A</header></div>
+		<div class="column" id="column-b" draggable="true"><header>B</header></div>
+	  </div>
+	  <div class="clear"></div>
+	</div>	
+	<div class="demo_block" id="autocompletes"><br><br>
+	 <h3 class="demo_title autocompletetitle">Autocomplete:</h3>
+	 <cool-select
+	     v-model="selected"
+        :items="items"
+        placeholder="Select US State"
+		id="country1"
+      />
+    </div>
+	<div class="demo_block" id="buttons"><br>
+	  <h3 class="demo_title">Button:</h3><br>
+	  <button id="abc" name="name" class="button">Button</button><br>
+	  <a href="#name" id="linkbutton1">Button</a>
+    </div>
+	<div md-svg-src="img/icons/android.svg"  class="demo_block" id="buttons2">
+	  <h3 class="demo_title">SelenideSelectors test:</h3>
+	  <button class="buy" title="my_title" value="my_value" id="button2">Basic Usage</button>
+    </div>
+	<div class="demo_block" id="inputtexts2">
+	  <h3 class="demo_title">Redundant Selectors</h3>
+	  <input type="text" name="abc" title="cde" value="fgh" id="ijk" class="xyz">
+    </div>
+	<div class="demo_block" id="htmlselectors">
+	  <h3 class="demo_title">HTML with text.</h3>
+	  <span id="span1">abc</span><br>
+	  <span class="subarea" id="span2">
+	    <b>Bottom Sheet</b>
+	  </span>
+	  <ul id="ul1">
+	    <li id="li1">list item 1</li>
+	    <li id="li2">list item 2</li>
+	  </ul>
+    </div>
+	<div class="demo_block" id="texts1">
+	  <h3 class="demo_title">Text 1</h3>
+	  Text with 'abc'. And below two paragraphs with this text.
+    </div>
+	<div class="demo_block" id="texts2">
+	  <h3 class="demo_title">Text 2</h3>
+	  Text with 'abc'.
+    </div>
+	<div class="demo_block" id="texts3">
+	  <h3 class="demo_title">Text 3</h3>
+	  Abc abc abc. 123 123 123 .
+    </div>
+	<div class="demo_block" id="texts4">
+	  <h3 class="demo_title">Text 4</h3>
+	  123 123 123 123 . xyz xyz xyz.
+    </div>
+	<div>
+    </div>
+	<div>
+    </div>
+</div>

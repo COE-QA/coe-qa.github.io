@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title v-if="!title">COE Test Automation Sample App</title>
+    <template v-else>
+        <title>{{ title }} - COE Test Automation Sample App</title>
+    </template>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+</head>
+<body layout="row">
+  <div id="app">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <router-link to="/" id="brand-title" class="navbar-brand">COE Test Automation Sample App</router-link>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li v-bind:class="{ active: $route.path === '/javadoc' }">
+                        <router-link to="/javadoc">COE Test Automation Framework Documentation</router-link>
+                    </li>
+                    <li v-bind:class="{ active: $route.path === '/plans' }">
+                        <router-link to="/plans">Plans</router-link>
+                    </li>
+                    <li v-bind:class="{ active: $route.path === '/products' }">
+                        <router-link to="/products">Products</router-link>
+                    </li>
+                    <li v-bind:class="{ active: $route.path === '/calculations' }">
+                        <router-link to="/calculations">Calculations</router-link>
+                    </li>
+                    <li v-if="isAuthenticated" v-bind:class="{ active: $route.path === '/users' }">
+                        <router-link to="/users">Users</router-link>
+                    </li>
+                </ul>
+                <ul v-if="isAuthenticated" class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <router-link to="settings" href="#">Settings</router-link>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#" v-on:click="signOut">Sign Out</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul v-else class="nav navbar-nav navbar-right">
+                    <li v-bind:class="{ active: $route.path === '/signin' }">
+                        <router-link to="/signin">Sign In</router-link>
+                    </li>
+                    <li v-bind:class="{ active: $route.path === '/signup' }">
+                        <router-link to="/signup">Sign Up</router-link>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" v-show="!apperrors.notFound">
+		<router-view></router-view>
+    </div>
+    <div class="container" v-if="apperrors.notFound">
+        <not-found></not-found>
+    </div>
+
+  </div>
+  <script src="build/build.js"></script>
+</body>
+</html>

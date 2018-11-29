@@ -1,0 +1,138 @@
+﻿#app > .container {
+    padding: 60px 15px 0;
+}
+
+.table tr {
+    > td.actions-column {
+        padding-top: 3px;
+        padding-bottom: 2px;
+    }
+
+    > td.user-actions-column {
+        width: 164px;
+        min-width: 164px;
+    }
+
+    > td.product-actions-column {
+        width: 580px;
+        min-width: 580px;
+    }
+}
+
+.has-error .help-block {
+    display: inline-block;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+label.label-option {
+    font-weight: normal;
+}
+
+.nav.nav-tabs {
+    margin-bottom: 15px;
+}
+
+textarea#notes {
+    height: 220px;
+    resize: none;
+}
+
+.nav.nav-tabs > li.active span.text-danger {
+    display: none;
+}
+
+.details-list {
+    dl {
+        margin-bottom: 10px;
+
+        dt {
+            display: inline-block;
+            min-width: 92px;
+            font-weight: normal;
+            color: #999;
+
+            :after {
+                content: ":";
+            }
+        }
+
+        dd {
+            display: inline;
+            font-weight: normal;
+            white-space: pre-wrap;
+        }
+    }
+}
+
+.feature-list {
+    padding: 0;
+
+    li {
+        list-style: none;
+
+        span.glyphicon-ok {
+            color: green;
+            margin-right: 6px;
+        }
+    }
+}
+
+.has-error {
+    .checkbox {
+        label {
+            color: #333;
+        }
+
+        .help-block {
+            padding-left: 20px;
+        }
+    }
+}
+.column {
+    height: 150px;
+    width: 150px;
+    float: left;
+    border: 2px solid #666666;
+    background-color: #ccc;
+    margin-right: 5px;
+    text-align: center;
+    cursor: move;
+}
+.column, .columns {
+    position: relative;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    float: left;
+}
+[class*="column"] + [class*="column"]:last-child {
+    float: right;
+}
+.waiting {
+  display:none;
+}
+.clear {
+  clear:both;
+}
+html.allwidth {
+	height:86%;
+	body,
+	div#app,
+	div.container,
+	div.allwidthdiv,  
+	iframe {
+		width:100%;
+		height:100%;
+	}
+}
+ .demo_block {
+    margin: 20px 10px;
+    padding: 20px 10px;
+    border: 1px solid #bbb;
+	border-radius: 5px;
+	h3.demo_title {
+		margin-top:0px;
+	}
+ }
+ 
