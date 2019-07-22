@@ -16,6 +16,12 @@ module.exports = {
 			},2000);
 	    })
     },
+	methods: {
+	  bind_customddlvalue(str) {
+		console.log(str);
+	    $('#dropdownMenuButton').html(str+' <span class="caret"></span>');  
+	  }
+	},
 	data () {
 		return {
 		  selected: null,
