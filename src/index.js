@@ -1,4 +1,5 @@
 ﻿import Vue from 'vue'
+import VueFailed from 'vue-failed'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import VeeValidate from 'vee-validate'
