@@ -1,0 +1,68 @@
+1.  Install git
+2.  Install ".Net framework 4.7" and Download nuget from https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+    or 
+    Install Visual Studio 2019
+4.  Clone project from repository
+
+		git clone https://coe-qa-teaminternational@bitbucket.org/coe-qa-teaminternational/coe-qa-teaminternational-dotnet.git
+		
+5.  Install Allure.
+	5.1. For Windows, Allure is available from the Scoop commandline-installer.
+	To install Allure, download and install Scoop and then execute in the Powershell:
+	
+		scoop install allure
+		
+	Also Scoop is capable of updating Allure distribution installations. To do so navigate to the Scoop installation directory and execute
+	
+		\bin\checkver.ps1 allure -u
+		
+	This will check for newer versions of Allure, and update the manifest file. Then execute
+	
+		scoop update allure
+		
+	to install a newer version. (documentation)
+	5.2. Manual installation
+	Download the latest version as zip archive from Maven Central (http://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/).
+	Unpack the archive to allure-commandline directory.
+	Navigate to bin directory and run.
+		
+		allure.bat.
+		
+	Add allure to system PATH.
+	5.3. Check the installation
+	
+		allure --version
+		
+6.  Execute 	
+
+		nuget update
+		
+7.  In project root where was cloned coe-qa-teaminternational-dotnet.git
+
+		nuget restore
+
+8.0.Before building project you can change URL of tested website in file ".\COE.Examples\Atata.json" in property "baseUrl" (replace "https://coe-qa.github.io/" to your URL)
+8.  In project root where was cloned coe-qa-teaminternational-dotnet.git build project by
+
+		"{Path to MS Build}/MSBuild" COE.Examples\COE.Examples.csproj
+		
+9.  Test execution (example):
+    In project root where was cloned coe-qa-teaminternational-dotnet.git
+	
+		".\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe" --test=COE.Examples.Tests.DownloadTests.SimpleDownload output\COE.Examples.dll
+
+	This example (DownloadTests.SimpleDownload) should have 1 passed test or 1 failed test in report with screenshot and html-code of the page wehre test was failed.
+	In the folder ".\output\Logs" you must see new folder with current datetime (for example: 2019-11-25 18_57_35) with folder "SimpleDownload" inside it with file "SimpleDownload.log" inside.
+	In the folder ".\output\allure-results" you must see .json and .txt files.	
+10. Generate Allure report
+
+		allure generate .\output\allure-results\ -o .\allure-report
+
+11. View report in browser (if you have UI)
+
+		allure open .\allure-report
+		
+	or you can just upload folder ./allure-report to any webserver
+	or you can upload folder .\output\allure-results to any environment with installed Allure and generate report there.
+	
+	
