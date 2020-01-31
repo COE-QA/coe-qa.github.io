@@ -64,6 +64,11 @@ code, tt {
     margin-top:8px;
     line-height:1.4em;
 }
+code {
+	display:block;
+	margin-bottom:16px;
+	padding-left:20px;
+}
 dt code {
     font-family:'DejaVu Sans Mono', monospace;
     font-size:14px;
@@ -649,4 +654,7 @@ th.colFirst, th.colLast, th.colOne, .constantsSummary th {
 
 li i {
 text-decoration:underline;
+}
+.navigation {
+	height: 100%;
 }

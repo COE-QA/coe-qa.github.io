@@ -1,0 +1,304 @@
+<html><head><title>Class Library Documentation</title>
+<link href="styles/default.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" title="Style">
+<style>
+.contentContainer, .sourceContainer, .classUseContainer, .serializedFormContainer, .constantValuesContainer {
+    clear: none; 
+	padding-left: 240px;
+	position: relative;
+    z-index: 1;
+}
+.navigation li,
+.navigation a {
+    font-size: 12px;
+}
+.navigation {
+    height: 100%;
+    z-index: 1000;
+    position: relative;
+}
+</style>
+</head><body><div class="header"> </div><br class="clear" /><div class="navigation"><ul><li><a class="current" href="index.htm">Documentation</a></li></ul><ul><li><a href="0-AtataNamespaces.htm">Atata Namespaces</a></li><li><a href="1-COE.CoreNamespaces.htm">COE.Core Namespaces</a></li><li><a href="2-COE.Core.APINamespaces.htm">COE.Core.API Namespaces</a></li><li><a href="3-COE.Core.AttributesNamespaces.htm">COE.Core.Attributes Namespaces</a></li><li><a href="4-COE.Core.DbNamespaces.htm">COE.Core.Db Namespaces</a></li><li><a href="5-COE.Core.ExceptionsNamespaces.htm">COE.Core.Exceptions Namespaces</a></li><li><a href="6-COE.Core.HelpersNamespaces.htm">COE.Core.Helpers Namespaces</a></li><li><a href="7-COE.Core.InterfacesNamespaces.htm">COE.Core.Interfaces Namespaces</a></li><li><a href="8-COE.Core.LoggingNamespaces.htm">COE.Core.Logging Namespaces</a></li><li><a href="9-COE.Core.ModelsNamespaces.htm">COE.Core.Models Namespaces</a></li><li><a href="10-COE.Core.PagesNamespaces.htm">COE.Core.Pages Namespaces</a></li><li><a href="11-COE.Core.ReportNamespaces.htm">COE.Core.Report Namespaces</a></li><li><a href="12-COE.ExamplesNamespaces.htm">COE.Examples Namespaces</a></li><li><a href="13-COE.Examples.ComponentsNamespaces.htm">COE.Examples.Components Namespaces</a></li><li><a href="14-COE.Examples.DbHelpersNamespaces.htm">COE.Examples.DbHelpers Namespaces</a></li><li><a href="15-COE.Examples.ExtensionsNamespaces.htm">COE.Examples.Extensions Namespaces</a></li><li><a href="16-COE.Examples.ModelsNamespaces.htm">COE.Examples.Models Namespaces</a></li><li><a href="17-COE.Examples.PagesNamespaces.htm">COE.Examples.Pages Namespaces</a></li><li><a href="18-COE.Examples.TestsNamespaces.htm">COE.Examples.Tests Namespaces</a></li><li><a href="19-COE.Examples.TriggersNamespaces.htm">COE.Examples.Triggers Namespaces</a></li></ul></div>
+<div class="contentContainer">
+<div id="coedotnet_overview">
+	<h1>Framework for automation testing using Atata, NUnit, Allure and integration with Zephyr.</h1>
+	<div class="overview-content">
+	<h2>Framework overview.</h2>
+	<p>The main goal of our Test Automation framework is to reduce time and cost that required for creating and supporting an automation testing code.
+     Framework achieves this goal by organizing flexible and well documented classes and methods for solving common and frequently encountered tasks and problems in automation testing.</p>
+	<p>List of tasks and problems you can easily solve using this framework:</p>
+	<ul>
+		<li>Create basic code for automation testing using project ‘COE.Core‘ with nuget packages, 'Selenium', ‘Atata', ‘Nunit’, ‘Nlog’, 'Allure', integration with 'Zephyr API' (to post results in JIRA Cloud) and 'PageObject' pattern. 
+		This allows you to start immediately to write your own custom PageObjects and tests without spending time for organizing project from scratch.</li>
+		<li>Create custom PageObjects with different level of complication (for pages in tested project) using basic PageObjects from framework, their methods and provided examples. 
+		This allows you to minimize time for creating basic methods of pages to test frequently encountered functionality in web-projects like 'authorization', 'switch language', different complex HTML elements (like 'autocomplete input field‘, ‘custom dropdown’ like bootstrap), etc.</li>
+		<li>Retrieve full reports with detailed information about tests with screenshots and without spending much time for writing code for getting those reports.</li>
+		<li>Quickly write small simple tests for web-pages with commonly used interfaces.</li>
+		<li>Save time for new QA engineers by quick learning wide framework's collection of examples of usage for every Atata method.</li>
+	</ul>
+	<p>This framework should provide another big benefit for QA. It's supposed that latest versions of this framework will support all newest and innovative methods and tools that appearing in IT industry.</p>
+	<p>Framework solution has five components at the moment:</p>
+		<ul>
+			<li>Source code on C# (.Net). Can be found in repository (see <a href="#installation">Installation</a> section).</li>
+			<li>Documentation. Can be found at the moment at <a href="https://coe-qa.github.io">https://coe-qa.github.io</a></li>
+			<li>Presentations. Can be found at COE QA Teamintenational Sharepoint. Please, contant someone from COE QA department.</li>
+			<li>Demo project with examples of test suite, Page Objects and tests on C# (.Net). Can be found in repository (see <a href="#installation">Installation</a> section).</li>
+			<li>Web Application for testing by Testing Demo Project. Can be found at the moment at <a href="https://coe-qa.github.io">https://coe-qa.github.io</a></li>
+		</ul>
+	<h2>Tutorial.</h2>
+	<h3>1. Requirements for using framework.</h3>
+	<ul>
+		<li>Microsoft .Net 4.5.2 Framework</li>
+		<li>Nuget manager</li>
+		<li>Internet access</li>
+	</ul>
+	All other required packages will be downloaded automatically by nuget manager.
+	
+	<h3>2. Installation.</h3>
+	How to install framework core with examples and check that installation was correct.
+    <ol>
+		<li>Install git</li>
+		<li>Install ".Net framework 4.7" and Download nuget from https://dist.nuget.org/win-x86-commandline/latest/nuget.exe<br/>
+			or <br/>
+			Install Visual Studio 2019
+		</li>
+		<li>Clone project from repository
+			<code>
+				git clone https://coe-qa-teaminternational@bitbucket.org/coe-qa-teaminternational/coe-qa-teaminternational-dotnet.git
+			</code>
+		</li>
+		<li>Install Allure.
+			<ul>
+				<li>For Windows, Allure is available from the Scoop commandline-installer.<br>
+					To install Allure, download and install Scoop and then execute in the Powershell:
+					
+			<code>
+						scoop install allure
+			</code>
+						
+					Also Scoop is capable of updating Allure distribution installations. To do so navigate to the Scoop installation directory and execute
+					
+			<code>
+						\bin\checkver.ps1 allure -u
+			</code>
+						
+					This will check for newer versions of Allure, and update the manifest file. Then execute
+					
+						<code>
+						scoop update allure
+						</code>
+						
+					to install a newer version. (documentation)
+				</li>
+				<li> Manual installation<br>
+					Download the latest version as zip archive from Maven Central (http://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/).<br>
+					Unpack the archive to allure-commandline directory.<br>
+					Navigate to bin directory and run.
+						
+						<code>
+						allure.bat.
+						</code>
+						
+					Add allure to system PATH.
+				</li>
+				<li> Check the installation
+					
+						<code>
+						allure --version
+						</code>
+				</li>
+			</ul>
+		</li>
+		<li>Execute 	
+
+			<code>
+			nuget update
+			</code>
+		
+		</li>
+		<li>In project root where was cloned coe-qa-teaminternational-dotnet.git
+
+			<code>
+			nuget restore
+			</code>
+
+		</li>
+		<li>In project root where was cloned coe-qa-teaminternational-dotnet.git build project by
+
+			<code>
+			"{Path to MS Build}/MSBuild" COE.Examples\COE.Examples.csproj
+			</code>
+		
+		</li>
+		<li>Test execution (example):<br>
+			In project root where was cloned coe-qa-teaminternational-dotnet.git
+			
+			<code>
+				".\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe" --test=COE.Examples.Tests.DownloadTests.SimpleDownload output\COE.Examples.dll
+			</code>
+
+			This example (DownloadTests.SimpleDownload) should have 1 passed test or 1 failed test in report with screenshot and html-code of the page wehre test was failed.<br>
+			In the folder ".\output\Logs" you must see new folder with current datetime (for example: 2019-11-25 18_57_35) with folder "SimpleDownload" inside it with file "SimpleDownload.log" inside.<br>
+			In the folder ".\output\allure-results" you must see .json and .txt files.	
+		</li>
+		<li>Generate Allure report
+
+			<code>
+			allure generate .\output\allure-results\ -o .\allure-report
+			</code>
+
+		</li>
+		<li>View report in browser (if you have UI)
+
+			<code>
+				allure open .\allure-report
+			</code>
+				
+			or you can just upload folder ./allure-report to any webserver<br>
+			or you can upload folder .\output\allure-results to any environment with installed Allure and generate report there.
+		</li>
+	</ul>
+	<h3>3. Configuration.</h3>
+
+	After copying examples project and renameing it with your name you can change some settings in 2 config files.<br><br>
+
+	<ul>
+		<li>
+			<b>Atata.json:</b>
+			<ul>
+				<li><i>drivers</i> - configure which browsers and settings to use in tests.</li>
+				<li><i>baseUrl</i> - default URL address for tested application </li>
+				<li><i>culture</i> - default culture for tested application </li>
+				<li><i>verificationTimeout</i> - define timeout for explicit waits in Selenide configuration (in milliseconds)</li>
+				<li><i>useNUnitTestName</i> - whether logs should application use nunit test names</li>
+				<li><i>logNUnitError</i> - whether logs must write numut errors</li>
+				<li><i>takeScreenshotOnNUnitError</i> - whether Nunit should write screenshots in log directory</li>
+				<li><i>logConsumers</i> - define log consumers (writers)</li>
+
+			</ul>
+		</li>
+		<li>
+			<b>app.config:</b>
+			<ul>
+				<li><i>SaveAllureScreenshots</i> - define whether to save screenshots in Allure report or not.</li>
+				<li><i>OneTimeDriverSetup</i> - define if we have to setup driver for whole suite or for before running each test fixture.</li>
+				<li><i>CustomBuildDriver</i> - define if project has custom building method for driver in its before suite or before test setup methods to prevent runing default builder.</li>
+				<li><i>RESTSharpUserName</i> - default username for API testing suite.</li>
+				<li><i>RESTSharpPassword</i> - default password for API testing suite. </li>
+				<li><i>Zephyr.Enabled</i> - Used to enable or disable Zephyr API integration.</li>
+				<li><i>Zephyr.BaseUrl</i> - URL for Zephyr API gate. It can be found in ZAPI documentation. At the moment it's https://prod-api.zephyr4jiracloud.com/connect .</li>
+				<li><i>Zephyr.secretKey</i> - secret access key for Zephyr API. Can be found in JIRA Dashboard in JIRA Settings-&gt;Apps-&gt;ZAPI.<br> <img src="./../img/img01.PNG"></li>
+				<li><i>Zephyr.zapiAccessKey</i> - shared access key for Zephyr API. Can be found in JIRA Dashboard in JIRA Settings-&gt;Apps-&gt;ZAPI.</li>
+				<li><i>Zephyr.userID</i> - user name for account on JIRA Cloud that hass API access. Can be found in JIRA Dashboard in JIRA Settings-&gt;Apps-&gt;ZAPI.</li>
+				<li><i>Zephyr.projectID</i> - Project ID in JIRA Cloud. Can be found in JIRA Dashboard in the project management "Project Settings"-&gt;"Details" in URL parameter pid. Should look like "10000" or "10001", etc.<br>  <img src="./../img/img02.PNG"> </li>
+				<li><i>Zephyr.versionID</i> - Version ID of tested version of project in JIRA Cloud. Can be found in JIRA Dashboard in the project management "Project Settings"-&gt;"Versions" -&gt;click on the created version. Version ID will be in URL after "/versions/". Should look like "10000" or "10001", etc. <br> <img src="./../img/img04.PNG"> </li>
+				<li><i>Zephyr.cycleID</i> - ID of current cycle of testing in JIRA Cloud. Before looking for cycle ID you must create all test cases in JIRA Project as issues with type "test" (see image below).<br>
+					<img src="./../img/img03.PNG">
+					<br>
+					After this you should use ID of issue in @TmsLink annotation for your method that annotated also as @Test. To find ID of issue go to "Tests" in JIRA Dashboard in the project management.
+					And select version to which you assigned this issue. Find your test in the list and on "Edit" in last column dropdown menu click right button and select "Open in new window" in context menu. In opened window you will see in URL
+					as parameter "id". See screenshot below.<br>
+					<img src="./../img/img05.PNG">
+					<br>
+					If it is first execution of tests for testing cycle, you have to set "-1" into this properties file and new cycle will be created automatically.
+					If you already has create cycle and want to run new execution, you can find ID of cycle in JIRA Dashboard in the project management. Click "Tests" in left menu then
+					select cycle in the Cycle Summary tree. And click on the anu icon "E" in column Actions of tests list. ID of Cycle will be in URL as parameter node.id and
+					should look like "9abb8d88-a9e7-4b97-b01f-2fd90ef81c77" See image below.<br>
+					<img src="./../img/img06.PNG">
+				</li>
+				<li><i>Zephyr.Timeout</i> - timeout for Zephyr API authorization request.</li>
+				<li><i>Zephyr.ReadWriteTimeout</i> - timeout for Zephyr API read/write reqyests.</li>
+			</ul>
+		</li>
+	</ul>
+	<p></p>
+	<h3>4. Writing tests.</h3>
+	<p>Main guide how to start writing tests.</p>
+	<ul>
+		<li>Framework contains simple example solution and example classes with tests that working with special web-application. This web-application supported along with framework and deployed on github.io sub-domain.</li>
+<li>Starting new Project is very simple and requires minimum actions:
+	<ul>
+		<li>Create new solution with your testing project </li>
+		<li>Add COE.Core project to your solution and make dependency of your project from COE.Core. </li>
+		<li>Copy app.config, allureConfig.Template.json, NLog.config, NLog.xsd from COE.Examples project to your project and make configuration changes in required variables. </li>
+	</ul>
+</li>
+<li>That's it. Now you can add new test classes into your project extending it from UITestFixtureBase and SetUpFixtureBase classes of COE.Core using COE.Examples project as  guideline.</li>
+	</ul>
+	<p>Additional advices.</p>
+		<ul>
+		  <li>Tests in project must be extended from your own base class (you can call it ‘UITestFixture’) that must be extended from ‘UITestFixtureBase’  </li>
+<li>Any custom methods can be added in your own base class</li>
+<li>Custom project Page classes must be extended from ‘BasePage’ class.</li>
+<li>
+	There is a few helper PageObject classes in examples that you can use for your tests:
+	<ul>
+		<li><i>SignUpPage</i> – emulates page with registration fields and methods to test this page</li>
+		<li><i>SignInPage</i> – emulates page with authorization elements and have methods to login and test authorization</li>
+	</ul>
+</li>
+		</ul>
+
+	<p>List of helpful methods and classes:
+		</p>
+		<ul>
+			<li><i>CommonHelper</i> – class with collection of helper methods</li>
+			<li><i>JsonHelper</i> – collect methods to help working with JSON</li>
+			<li><i>CustomDDL</i> – component for custom dropdown lists and easy method to select value</li>
+			<li><i>PageHelper</i> – class that has some helpful methods for Pages</li>
+			<li><i>RestSharpClient</i> – used by ZephyrAPI Manager to make HTTP requests, can be used in the project for tests</li>
+			<li><i>BasePage</i> – basic PageObject class with some useful implementations</li>
+			<li><i>ICOEDataVerificationProviderExtensions</i> – extension for Atata methods that adding softAssert methods and also some other helpful verification methods like ‘BeGreater’ for Datetime, etc.</li>
+		</ul>
+	<p></p>
+	<h3>5. Execution tests.</h3>
+			<p>To execute tests use command from command line: 
+				<code>
+					".\packages\NUnit.ConsoleRunner.3.10.0\tools\nunit3-console.exe" --test=NAME_OF_TESTCLASS_METHOD output\ProjectName.dll
+				</code>
+				where NAME_OF_TESTCLASS_METHOD should be like "COE.Examples.Tests.DownloadTests.SimpleDownload" (This command will execute method 'SimpleDownload' from class 'DownloadTests' from package 'COE.Examples.Tests'.)<br>
+				and 'ProjectName.dll' is the name of your project. <br/>
+				In parameter --test you can add use just testclass name to run all methods from this class, <br>
+				or skip this parameter to run all tests from the suite.
+			</p>
+			<p>
+				You also can use Visual Studio functionality to execute tests.
+			</p>
+	<h3>6. View results (reports).</h3>
+		<ul>
+		<li>Generate Allure report
+
+			<code>
+			allure generate .\output\allure-results\ -o .\allure-report
+			</code>
+
+		</li>
+		<li>View report in browser (if you have UI)
+
+			<code>
+				allure open .\allure-report
+			</code>
+				
+			or you can just upload folder ./allure-report to any webserver<br>
+			or you can upload folder .\output\allure-results to any environment with installed Allure and generate report there.
+		</li>
+		</ul>
+		<p>
+		Also if Zephyr API was enabled and you connected your testing project with JIRA project, you certainly will see all execution's results in JIRA Dashboard of the project.
+	</p>
+	<a name="contribute"></a>
+	<h3>7. Upgrading and updating. Contributing.</h3>
+	<ul>
+		<li>Framework actively extending its functionality and features</li>
+		<li>All tools used in framework keeping up-to-date</li>
+		<li>All projects can merge new versions of framework with they current projects, if they followed all advices</li>
+		<li>All projects welcome to contribute they successful solutions into the framework repository in order to spread their experience on all other projects</li>
+	</ul>
+	<p></p>
+	</div>
+</div>
+</div>
+
+<div class="content"><h1>Class Library Documentation</h1><h2>Namespaces</h2><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tr><td><a href="0-AtataNamespaces.htm">Atata Namespaces</a></td><td /></tr><tr><td><a href="1-COE.CoreNamespaces.htm">COE.Core Namespaces</a></td><td /></tr><tr><td><a href="2-COE.Core.APINamespaces.htm">COE.Core.API Namespaces</a></td><td /></tr><tr><td><a href="3-COE.Core.AttributesNamespaces.htm">COE.Core.Attributes Namespaces</a></td><td /></tr><tr><td><a href="4-COE.Core.DbNamespaces.htm">COE.Core.Db Namespaces</a></td><td /></tr><tr><td><a href="5-COE.Core.ExceptionsNamespaces.htm">COE.Core.Exceptions Namespaces</a></td><td /></tr><tr><td><a href="6-COE.Core.HelpersNamespaces.htm">COE.Core.Helpers Namespaces</a></td><td /></tr><tr><td><a href="7-COE.Core.InterfacesNamespaces.htm">COE.Core.Interfaces Namespaces</a></td><td /></tr><tr><td><a href="8-COE.Core.LoggingNamespaces.htm">COE.Core.Logging Namespaces</a></td><td /></tr><tr><td><a href="9-COE.Core.ModelsNamespaces.htm">COE.Core.Models Namespaces</a></td><td /></tr><tr><td><a href="10-COE.Core.PagesNamespaces.htm">COE.Core.Pages Namespaces</a></td><td /></tr><tr><td><a href="11-COE.Core.ReportNamespaces.htm">COE.Core.Report Namespaces</a></td><td /></tr><tr><td><a href="12-COE.ExamplesNamespaces.htm">COE.Examples Namespaces</a></td><td /></tr><tr><td><a href="13-COE.Examples.ComponentsNamespaces.htm">COE.Examples.Components Namespaces</a></td><td /></tr><tr><td><a href="14-COE.Examples.DbHelpersNamespaces.htm">COE.Examples.DbHelpers Namespaces</a></td><td /></tr><tr><td><a href="15-COE.Examples.ExtensionsNamespaces.htm">COE.Examples.Extensions Namespaces</a></td><td /></tr><tr><td><a href="16-COE.Examples.ModelsNamespaces.htm">COE.Examples.Models Namespaces</a></td><td /></tr><tr><td><a href="17-COE.Examples.PagesNamespaces.htm">COE.Examples.Pages Namespaces</a></td><td /></tr><tr><td><a href="18-COE.Examples.TestsNamespaces.htm">COE.Examples.Tests Namespaces</a></td><td /></tr><tr><td><a href="19-COE.Examples.TriggersNamespaces.htm">COE.Examples.Triggers Namespaces</a></td><td /></tr></table></div><div class="footer">
+			Produced by the <a href="https://livedocumenter.barryjones.me.uk/">Live Documenter</a>.
+		</div></body></html>
