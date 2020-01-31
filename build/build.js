@@ -117,7 +117,7 @@
 	    };
 	};
 
-	var router = new _vueRouter2.default({ routes: [{ path: '', component: __webpack_require__(32) }, { path: '/signin', component: __webpack_require__(44) }, { path: '/signup', component: __webpack_require__(46) }, { path: '/plans', component: __webpack_require__(38) }, { path: '/products', component: __webpack_require__(40) }, { path: '/calculations', component: __webpack_require__(28) }, { path: '/javadoc', component: __webpack_require__(34) }, { path: '/settings', component: requireWithAuthentication('./components/settings.js') }, { path: '/users', component: requireWithAuthentication('./components/user-list.js') }, { path: '/users/:userId', component: requireWithAuthentication('./components/user-details.js') }, { path: '*', component: __webpack_require__(36) }]
+	var router = new _vueRouter2.default({ routes: [{ path: '', component: __webpack_require__(32) }, { path: '/signin', component: __webpack_require__(44) }, { path: '/signup', component: __webpack_require__(46) }, { path: '/plans', component: __webpack_require__(38) }, { path: '/products', component: __webpack_require__(40) }, { path: '/calculations', component: __webpack_require__(28) }, { path: '/javadoc', component: __webpack_require__(34) }, { path: '/dotnetdoc', component: __webpack_require__(30) }, { path: '/settings', component: requireWithAuthentication('./components/settings.js') }, { path: '/users', component: requireWithAuthentication('./components/user-list.js') }, { path: '/users/:userId', component: requireWithAuthentication('./components/user-details.js') }, { path: '*', component: __webpack_require__(36) }]
 	});
 	router.afterEach(function (to, from) {
 	    if (typeof router.app != 'undefined' && typeof router.app.clearErrors != 'undefined') {
@@ -56526,7 +56526,7 @@
 /* 31 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"allwidthdiv\">\r\n    <div class=\"page-header\">\r\n        <h1 class=\"text-center\">{{ $root.title }}</h1>\r\n    </div>\r\n\t<iframe src=\"/dotnetdoc/index.html\" >\r\n\t</iframe>\r\n</div>\r\n";
+	module.exports = "<div class=\"allwidthdiv\">\r\n    <div class=\"page-header\">\r\n        <h1 class=\"text-center\">{{ $root.title }}</h1>\r\n    </div>\r\n\t<iframe src=\"/dotnetdoc/index.htm\" >\r\n\t</iframe>\r\n</div>\r\n";
 
 /***/ }),
 /* 32 */
